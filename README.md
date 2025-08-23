@@ -1,7 +1,8 @@
-🤖 IntelliClaim: A Multi-Agent AI System for Insurance Adjudication
+## 🤖 IntelliClaim: 
+A Multi-Agent AI System for Insurance Adjudication
 IntelliClaim is a cutting-edge, full-stack application that leverages a sophisticated multi-agent system to automate and revolutionize the insurance claim adjudication process. By combining advanced AI techniques like RAG, NLP, and LLM reasoning, this project demonstrates a production-quality solution for delivering fast, accurate, and fully transparent insurance decisions.
 
-(This is a placeholder: You can replace this with a GIF of your application in action once it's running!)
+()
 
 ✨ Key Features
 🧠 Advanced Multi-Agent Architecture: Utilizes a team of specialized AI agents, each with a distinct role, to handle complex decision-making workflows.
