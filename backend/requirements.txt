@@ -1,0 +1,16 @@
+
+flask
+flask_socketio
+python-dotenv
+gunicorn
+flask_cors
+
+crewai
+
+ 
+langchain-groq
+langchain_community
+langchain-chroma
+sentence-transformers
+spacy
+requests
