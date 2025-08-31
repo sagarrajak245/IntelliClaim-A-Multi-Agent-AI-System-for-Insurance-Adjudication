@@ -4,12 +4,14 @@ import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings 
 
 # --- Configuration ---
 # We use a free, open-source embedding model that runs locally.
+
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-VECTOR_DB_PATH = "./chroma_db" # Path to store the vector database
+VECTOR_DB_PATH = "./chroma_db"  # Path to store the vector database
+
 
 def create_vector_store_from_pdf(pdf_path: str):
     """
@@ -29,14 +31,14 @@ def create_vector_store_from_pdf(pdf_path: str):
 
     if not chunks:
         raise ValueError("Could not create chunks from the document. Is the PDF empty or corrupted?")
-    
+        
     print(f"--- Created {len(chunks)} chunks ---")
 
     print(f"--- Initializing embedding model: {EMBEDDING_MODEL} ---")
     # This model runs locally and is quite powerful for its size.
     embeddings = HuggingFaceEmbeddings(
         model_name=EMBEDDING_MODEL,
-        model_kwargs={'device': 'cpu'} # Use CPU for broad compatibility
+        model_kwargs={'device': 'cpu'}  # Use CPU for broad compatibility
     )
 
     print(f"--- Creating and persisting vector store at: {VECTOR_DB_PATH} ---")
@@ -47,5 +49,6 @@ def create_vector_store_from_pdf(pdf_path: str):
         persist_directory=VECTOR_DB_PATH
     )
 
-    print("--- Vector store created successfully! ---")   
-    return vector_store
+    print("--- Vector store created successfully! ---")
+    
+    return vector_store  
