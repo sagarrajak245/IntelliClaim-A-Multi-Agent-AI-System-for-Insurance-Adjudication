@@ -25,4 +25,4 @@ const AgentCard = ({ name, status, result }) => {
     );
 };
 
-export default AgentCard;
+export default AgentCard;   
